@@ -7,13 +7,13 @@ public class HoverGlow : MonoBehaviour
 {
     private SpriteRenderer SpriteRenderer;
     private Color OriginalColor;
-    public Color HOVERCOLOR = OriginalColor;
+    public Color HOVERCOLOR;
 
     void Start()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
         OriginalColor = SpriteRenderer.color;
-        HOVERCOLOR *= 1.5f;
+        HOVERCOLOR = OriginalColor*1.5f;
     }
 
     void mouseEnter(Color hoverColor)
