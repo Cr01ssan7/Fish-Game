@@ -24,9 +24,12 @@ public class HoverHighlight : MonoBehaviour
 
         bool isHovering = hit.collider != null && hit.collider.gameObject == gameObject;
 
-        if (isHovering)
-            sr.color = highlightColor;
-        else
+        if (isHovering) {
+            Console.WriteLine("hit");
+            sr.color = highlightColor; }
+        else {
+            Console.WriteLine("hit");
             sr.color = originalColor;
+        }
     }
 }
