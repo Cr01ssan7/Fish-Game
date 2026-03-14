@@ -25,7 +25,7 @@ public class HoverGlow : MonoBehaviour
 
     void OnMouseEnter()
     {
-        spriteRenderer.color = hoverColor;
+        spriteRenderer.color *= 1.15f;
     }
 
     void OnMouseExit()
