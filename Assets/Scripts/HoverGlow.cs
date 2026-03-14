@@ -13,17 +13,18 @@ public class HoverGlow : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
-        highlightColor = originalColor * 1.5f;
+        highlightColor = originalColor * 1.1f;   // subtle brightness boost
     }
+
     void OnMouseEnter()
     {
         sr.color = highlightColor;
-            Debug.Log("ENTER");
-        }
+        Debug.Log("ENTER");
+    }
 
     void OnMouseExit()
     {
         sr.color = originalColor;
-            Debug.Log("EXIT");
-        }
+        Debug.Log("EXIT");
+    }
 }
