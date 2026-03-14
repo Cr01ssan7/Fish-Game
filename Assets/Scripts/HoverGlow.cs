@@ -4,6 +4,7 @@ using System.Runtime.Serialization;
 using UnityEngine;
 
 public class HoverGlow : MonoBehaviour
+public class HoverHighlight : MonoBehaviour
 {
     private SpriteRenderer sr;
     private Color originalColor;
@@ -16,15 +17,16 @@ public class HoverGlow : MonoBehaviour
         highlightColor = originalColor * 1.5f;
     }
 
-    void OnMouseEnter()
+    void Update()
     {
-        sr.color = highlightColor;
-        Debug.Log("ENTER");
-    }
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        RaycastHit2D hit = Physics2D.Raycast(mousePos, Vector2.zero);
 
-    void OnMouseExit()
-    {
-        sr.color = originalColor;
-        Debug.Log("EXIT");
+        bool isHovering = hit.collider != null && hit.collider.gameObject == gameObject;
+
+        if (isHovering)
+            sr.color = highlightColor;
+        else
+            sr.color = originalColor;
     }
 }
