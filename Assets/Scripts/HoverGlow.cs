@@ -15,14 +15,15 @@ public class HoverGlow : MonoBehaviour
         originalColor = sr.color;
         highlightColor = originalColor * 1.5f;
     }
-        void OnMouseEnter()
-        {
-            sr.color = highlightColor;
+    void OnMouseEnter()
+    {
+        sr.color = highlightColor;
+            Debug.Log("ENTER");
         }
 
-        void OnMouseExit()
-        {
-            sr.color = originalColor;
+    void OnMouseExit()
+    {
+        sr.color = originalColor;
+            Debug.Log("EXIT");
         }
-    
 }
