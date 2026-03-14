@@ -5,42 +5,32 @@ using UnityEngine;
 
 public class HoverGlow : MonoBehaviour
 {
-    private SpriteRenderer SpriteRenderer;
-    private Color OriginalColor;
-    public Color HOVERCOLOR;
+    private SpriteRenderer spriteRenderer;
+    private Color originalColor;
+    private Color hoverColor;
+
+    [Range(1f, 3f)]
+    public float brightness = 1.5f;
 
     void Start()
     {
-        SpriteRenderer = GetComponent<SpriteRenderer>();
-        OriginalColor = SpriteRenderer.color;
-        HOVERCOLOR = OriginalColor*1.5f;
+        spriteRenderer = GetComponent<SpriteRenderer>();
+
+        // Store the original color
+        originalColor = spriteRenderer.color;
+
+        // Create a brightened version
+        hoverColor = originalColor * brightness;
     }
 
-    void mouseEnter(Color hoverColor)
+    void OnMouseEnter()
     {
-        SpriteRenderer.color = hoverColor;
-    }
-
-    void mouseExit(Color originalColor)
-    {
-        SpriteRenderer.color = originalColor;
-    }
-
-    void OnMouseOver()
-    {
-        mouseEnter(HOVERCOLOR);
-        
-        Console.WriteLine("Mouse over on " + gameObject.name);
+        spriteRenderer.color = hoverColor;
     }
 
     void OnMouseExit()
     {
-        mouseExit(OriginalColor);
-        
+        spriteRenderer.color = originalColor;
     }
 
-    void Update()
-    {
-
-    }
 }
