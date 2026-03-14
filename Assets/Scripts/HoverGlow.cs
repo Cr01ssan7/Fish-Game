@@ -4,8 +4,7 @@ using System.Runtime.Serialization;
 using UnityEngine;
 
 public class HoverGlow : MonoBehaviour { 
-    public class HoverHighlight : MonoBehaviour
-    {
+
         private SpriteRenderer sr;
         private Color originalColor;
         private Color highlightColor;
@@ -34,4 +33,3 @@ public class HoverGlow : MonoBehaviour {
             }
         }
     }
-}
