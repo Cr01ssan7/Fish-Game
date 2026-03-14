@@ -13,7 +13,7 @@ public class HoverGlow : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         originalColor = sr.color;
-        highlightColor = originalColor * 1.1f;   // subtle brightness boost
+        highlightColor = originalColor * 1.5f;
     }
 
     void OnMouseEnter()
