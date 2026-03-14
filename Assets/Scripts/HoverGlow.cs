@@ -5,24 +5,32 @@ using UnityEngine;
 
 public class HoverGlow : MonoBehaviour
 {
-    private SpriteRenderer sr;
+    private SpriteRenderer spriteRenderer;
     private Color originalColor;
-    private Color highlightColor;
+    private Color hoverColor;
+
+    [Range(1f, 3f)]
+    public float brightness = 1.5f;
 
     void Start()
     {
-        sr = GetComponent<SpriteRenderer>();
-        originalColor = sr.color;
-        highlightColor = originalColor * 1.5f;
-    }
-        void OnMouseEnter()
-        {
-            sr.color = highlightColor;
-        }
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
-        void OnMouseExit()
-        {
-            sr.color = originalColor;
-        }
-    
+        // Store the original color
+        originalColor = spriteRenderer.color;
+
+        // Create a brightened version
+        hoverColor = originalColor * brightness;
+    }
+
+    void OnMouseEnter()
+    {
+        spriteRenderer.color *= 1.15f;
+    }
+
+    void OnMouseExit()
+    {
+        spriteRenderer.color = originalColor;
+    }
+
 }
