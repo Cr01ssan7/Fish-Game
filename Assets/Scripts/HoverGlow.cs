@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Runtime.Serialization;
 using UnityEngine;
 
@@ -6,34 +7,40 @@ public class HoverGlow : MonoBehaviour
 {
     private SpriteRenderer SpriteRenderer;
     private Color OriginalColor;
-    public Color HOVERCOLOR = Color.rgb(255, 255, 255, 50);
+    public Color HOVERCOLOR = OriginalColor;
 
     void Start()
     {
         SpriteRenderer = GetComponent<SpriteRenderer>();
         OriginalColor = SpriteRenderer.color;
+        HOVERCOLOR *= 1.5f;
     }
 
-    void mouseEnter(int hoverColor)
+    void mouseEnter(Color hoverColor)
     {
         SpriteRenderer.color = hoverColor;
     }
 
-    void mouseExit(int originalColor)
+    void mouseExit(Color originalColor)
     {
         SpriteRenderer.color = originalColor;
     }
 
-    OnMouseOver() {
+    void OnMouseOver()
+    {
         mouseEnter(HOVERCOLOR);
+        
+        Console.WriteLine("Mouse over on " + gameObject.name);
     }
 
-    OnMouseExit()
+    void OnMouseExit()
     {
         mouseExit(OriginalColor);
+        
     }
 
     void Update()
     {
 
+    }
 }
