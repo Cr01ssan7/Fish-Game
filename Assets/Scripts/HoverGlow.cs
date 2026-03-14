@@ -1,16 +1,39 @@
+using System;
+using System.Runtime.Serialization;
 using UnityEngine;
 
 public class HoverGlow : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    private SpriteRenderer SpriteRenderer;
+    private Color OriginalColor;
+    public Color HOVERCOLOR = Color.rgb(255, 255, 255, 50);
+
     void Start()
     {
-        
+        SpriteRenderer = GetComponent<SpriteRenderer>();
+        OriginalColor = SpriteRenderer.color;
     }
 
-    // Update is called once per frame
+    void mouseEnter(int hoverColor)
+    {
+        SpriteRenderer.color = hoverColor;
+    }
+
+    void mouseExit(int originalColor)
+    {
+        SpriteRenderer.color = originalColor;
+    }
+
+    OnMouseOver() {
+        mouseEnter(HOVERCOLOR);
+    }
+
+    OnMouseExit()
+    {
+        mouseExit(OriginalColor);
+    }
+
     void Update()
     {
-        
-    }
+
 }
