@@ -1,6 +1,5 @@
 using UnityEngine;
-
-using UnityEngine;
+using System;
 
 public class FishSimulation : MonoBehaviour
 {
