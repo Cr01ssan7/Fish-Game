@@ -45,11 +45,11 @@ public class FishSimulation : MonoBehaviour
         }
 
         // Randomize fish caught and hours
-        fishCaught = Random.Range(minFishCaught, maxFishCaught + 1);
-        hours = Random.Range(minHours, maxHours + 1);
+        fishCaught = UnityEngine.Random.Range(minFishCaught, maxFishCaught + 1);
+        hours = UnityEngine.Random.Range(minHours, maxHours + 1);
 
         // Randomize fish value
-        value = Random.Range(minValue, maxValue + 1);
+        value = UnityEngine.Random.Range(minValue, maxValue + 1);
 
         // Calculate fish per hour
         fishPerHour = (float)fishCaught / hours;
@@ -58,7 +58,7 @@ public class FishSimulation : MonoBehaviour
         calculatedRiskFactor = (fishCaught / 100f) * hours * riskFactor;
 
         // Roll chance
-        float roll = Random.Range(0f, 100f);
+        float roll = UnityEngine.Random.Range(0f, 100f);
         riskOccurred = roll < riskPercentage;
 
         // Apply risk penalty
