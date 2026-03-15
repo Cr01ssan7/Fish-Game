@@ -41,7 +41,7 @@ public class FishSimulation : MonoBehaviour
         // Stop simulation if no fish left
         if (maxFish <= 0)
         {
-            Debug.Log("Simulation stopped: No fish left in the population.");
+            Console.WriteLine("Simulation stopped: No fish left in the population.");
             return;
         }
 
