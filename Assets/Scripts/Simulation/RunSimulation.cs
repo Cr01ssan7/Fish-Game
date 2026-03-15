@@ -28,10 +28,17 @@ public class SceneInitializer : MonoBehaviour
             var sim = go.GetComponent<FishSimulation>();
             if (sim != null)
             {
+                var display = Object.FindFirstObjectByType<SimulationDisplay>();
+                if (display != null)
+                {
+                    display.Simulation = sim;
+                }
+
                 sim.RunSimulation();
-            } else
+            } 
+            else
             {
-                Debug.Log("Error: Simulation prefab does not have a FishSimulation component.");
+                Debug.Log("Error: Simulation prefab does not have a Fish Simulation component.");
             }
         } else
         {

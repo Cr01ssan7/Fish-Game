@@ -34,6 +34,8 @@ public class FishSimulation : MonoBehaviour
     public int value;                         // Random value per fish
     public int cashGain;                      // fishCaught * value
 
+    public event Action <int, int, int> OnRunComplete;
+
     // Call this from a UI Button
     public void RunSimulation()
     {
@@ -79,5 +81,7 @@ public class FishSimulation : MonoBehaviour
         Debug.Log($"Run Complete → Caught {fishCaught} fish in {hours} hours ({fishPerHour:F2}/hr).");
         Debug.Log($"Value per fish: {value}. CashGain: {cashGain}. Total Cash: {cash}.");
         Debug.Log($"Risk Occurred: {riskOccurred}. MaxFish now = {maxFish}");
+
+        OnRunComplete(fishCaught, hours, cash);
     }
 }
