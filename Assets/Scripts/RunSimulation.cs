@@ -40,7 +40,7 @@ public class FishSimulation : MonoBehaviour
         // Stop simulation if no fish left
         if (maxFish <= 0)
         {
-            Console.WriteLine("Simulation stopped: No fish left in the population.");
+            Debug.Log("Simulation stopped: No fish left in the population.");
             return;
         }
 
@@ -76,8 +76,8 @@ public class FishSimulation : MonoBehaviour
         cash += cashGain;
 
         // Console output
-        Console.WriteLine($"Run Complete → Caught {fishCaught} fish in {hours} hours ({fishPerHour:F2}/hr).");
-        Console.WriteLine($"Value per fish: {value}. CashGain: {cashGain}. Total Cash: {cash}.");
-        Console.WriteLine($"Risk Occurred: {riskOccurred}. MaxFish now = {maxFish}");
+        Debug.Log($"Run Complete → Caught {fishCaught} fish in {hours} hours ({fishPerHour:F2}/hr).");
+        Debug.Log($"Value per fish: {value}. CashGain: {cashGain}. Total Cash: {cash}.");
+        Debug.Log($"Risk Occurred: {riskOccurred}. MaxFish now = {maxFish}");
     }
 }
