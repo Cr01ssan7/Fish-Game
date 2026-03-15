@@ -369,7 +369,7 @@ GameObject:
   - component: {fileID: 1022420678}
   - component: {fileID: 1022420677}
   m_Layer: 0
-  m_Name: Simulation
+  m_Name: SimulationNemo'sNook
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a2b88f844056694398daa34a68fc162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FishSimulation
-  maxFish: 2000
+  maxFish: 1500
   minFishCaught: 100
   maxFishCaught: 300
   minHours: 1

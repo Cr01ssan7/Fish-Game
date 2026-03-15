@@ -5,8 +5,18 @@ using UnityEngine.EventSystems;
 
 public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    public string tipMessage;
-    private float TimeToWait = 0.5f;
+    private FishSimulation FishSim;
+    private int MaxFish;
+    public string TIPMESSAGE;
+    public float DELAY = 0.5f;
+
+    void Start()
+    {
+        FishSim = FindFirstObjectByType<FishSimulation>();
+        MaxFish = FishSim.maxFish;
+
+        Debug.Log(MaxFish);
+    }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
@@ -22,12 +32,12 @@ public class HoverTip : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 
     private void ShowMessage()
     {
-        HoverTipManager.OnMouseHover(tipMessage, Input.mousePosition);
+        HoverTipManager.OnMouseHover(TIPMESSAGE, Input.mousePosition);
     }
 
     private IEnumerator StartTimer()
     {
-        yield return new WaitForSeconds(TimeToWait);
+        yield return new WaitForSeconds(DELAY);
 
         ShowMessage();
     }

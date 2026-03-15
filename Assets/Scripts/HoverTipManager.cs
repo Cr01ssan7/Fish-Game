@@ -8,20 +8,16 @@ public class HoverTipManager : MonoBehaviour
 {
     public TextMeshProUGUI TIPTEXT;
     public RectTransform TIPWINDOW;
-    public Vector3 screenPosition;
 
     public static Action<string, Vector2> OnMouseHover;
     public static Action OnMouseLoseFocus;
+    
+    public int pW = 360;
 
     private void OnEnable()
     {
         OnMouseHover += ShowTip;
         OnMouseLoseFocus += HideTip;
-    }
-
-    void update()
-    {
-        screenPosition = Input.mousePosition;
     }
 
     private void OnDisable()
@@ -38,10 +34,10 @@ public class HoverTipManager : MonoBehaviour
     private void ShowTip(string tip, Vector2 mousePos)
     {
         TIPTEXT.text = tip;
-        TIPWINDOW.sizeDelta = new Vector2(TIPTEXT.preferredWidth > 200 ? 200 : TIPTEXT.preferredWidth, TIPTEXT.preferredHeight);
+        TIPWINDOW.sizeDelta = new Vector2(TIPTEXT.preferredWidth > pW ? pW : TIPTEXT.preferredWidth, TIPTEXT.preferredHeight);
 
         TIPWINDOW.gameObject.SetActive(true);
-        TIPWINDOW.transform.position = new Vector2(mousePos.x + TIPWINDOW.sizeDelta.x, mousePos.y + TIPWINDOW.sizeDelta.y);
+        TIPWINDOW.transform.position = new Vector2(mousePos.x + TIPWINDOW.sizeDelta.x / 2, mousePos.y + TIPWINDOW.sizeDelta.y);
     }
 
     private void HideTip()
