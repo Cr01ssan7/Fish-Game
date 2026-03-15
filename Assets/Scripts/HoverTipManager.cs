@@ -12,7 +12,7 @@ public class HoverTipManager : MonoBehaviour
     public static Action<string, Vector2> OnMouseHover;
     public static Action OnMouseLoseFocus;
     
-    public int pW = 360;
+    public int pW = 500;
 
     private void OnEnable()
     {
