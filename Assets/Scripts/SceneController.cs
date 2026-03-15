@@ -5,7 +5,7 @@ using UnityEngine;
 public class SceneController : MonoBehaviour
 {
     [SerializeField]
-    private float sceneFadeDuration = 1f;
+    private float sceneFadeDuration;
 
     private SceneFade sceneFade;
 
