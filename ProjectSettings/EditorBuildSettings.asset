@@ -11,6 +11,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/S_Nemo's Nook.unity
     guid: b104b724183d2cf46b15e0a58a5c247d
+  - enabled: 1
+    path: Assets/Scenes/S_The Bass Reef.unity
+    guid: f77f846d7c2994c45bdb65629de0f362
+  - enabled: 1
+    path: Assets/Scenes/S_The Crustacean Cove.unity
+    guid: 6aa6e78a3ffa998468d8646a677058ad
+  - enabled: 1
+    path: Assets/Scenes/S_Knot Shore.unity
+    guid: e54d37afbdee6b44b8e90b60a549da58
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
